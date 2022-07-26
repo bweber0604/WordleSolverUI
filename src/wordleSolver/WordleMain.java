@@ -71,7 +71,6 @@ public class WordleMain extends GBFrame {
 			KeyEvent.VK_BRACERIGHT, KeyEvent.VK_DECIMAL, KeyEvent.VK_BRACELEFT, KeyEvent.VK_BRACERIGHT,
 			KeyEvent.VK_DOLLAR, KeyEvent.VK_EXCLAMATION_MARK, KeyEvent.VK_QUOTE,KeyEvent.VK_SEMICOLON};
 	
-	
 	public boolean isLineValid() {
 		
 		for(int i = 0; i < 5; i++) {
