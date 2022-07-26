@@ -28,7 +28,7 @@ import BreezySwing.GBFrame;
 import BreezySwing.GBPanel;
 
 public class WordleMain extends GBFrame {
-
+	
 	GBPanel title = addPanel(1, 1, 1, 1);
 	GBPanel wordle = addPanel(2, 1, 1, 1);
 	GBPanel words = addPanel(1, 2, 1, 2);
@@ -39,7 +39,6 @@ public class WordleMain extends GBFrame {
 
 	JLabel titleText = title.addLabel("Wordle Solver", 1, 1, 1, 1);
 
-	//add a button
 	JLabel helpButton = title.addLabel("", 1, 2, 1, 1);
 	
 	JTextArea wordList = words.addTextArea("Words", 1, 1, 1, 1);
@@ -103,6 +102,7 @@ public class WordleMain extends GBFrame {
 
 	public void buttonClicked(JButton btn) {
 		if (btn == resetBtn) {
+			filterWords();
 			row = 0;
 			col = 0;
 			wordList.grabFocus();
@@ -200,6 +200,7 @@ public class WordleMain extends GBFrame {
 				for (int j = 0; j < boxes[i].length; j++) {
 					boxes[i][j].setText("");
 					boxes[i][j].setBackground(BLANK);
+					boxes[i][j].setForeground(Color.black);
 				}
 			}
 			filterWords();
@@ -308,9 +309,6 @@ public class WordleMain extends GBFrame {
 				boxes[i][j].setFont(new Font(boxes[i][j].getFont().getFontName(), Font.BOLD, 40));
 				boxes[i][j].setHorizontalAlignment(SwingConstants.CENTER);
 				boxes[i][j].setPreferredSize(new Dimension(50, 50));
-					
-				
-				//add mouse listener to cycle through green to yellow to gray if there is a letter in it
 				
 				boxes[i][j].addMouseListener(new MouseListener() {
 					
@@ -405,7 +403,6 @@ public class WordleMain extends GBFrame {
 		});
 
 		filterWords();
-
 	}
 
 	public static void main(String[] args) {
