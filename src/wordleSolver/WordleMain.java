@@ -48,13 +48,12 @@ public class WordleMain extends GBFrame {
 
 	int row = 0;
 	int col = 0;
-
+	int guessCount = 0;
+	
 	String userWord = "";
 	String wordResults = "";
 
 	boolean running = true;
-
-	int guessCount = 0;
 
 	final Color BLANK = new Color(255, 255, 255);
 	final Color CORRECT = new Color(57, 191, 62);
